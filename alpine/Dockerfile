@@ -1,14 +1,6 @@
 ARG PY_VERSION=3.6-alpine3.8
 FROM python:$PY_VERSION as firebase-iot-test-base
 
-WORKDIR /root/
-# Setup timezone
-ARG TZ=America/Argentina/Cordoba
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-
-RUN mkdir -p /var/log/firebase-iot-log/
-VOLUME ["firebase-iot-log"]
-
 RUN apk update && apk add --no-cache --virtual .build-deps gcc musl-dev wget
 
 RUN pip3 install \
@@ -25,5 +17,3 @@ ARG PYREBASE_VERSION=2019.1.28
 RUN pip3 install https://github.com/agustinmontero/Pyrebase/releases/download/${PYREBASE_VERSION}/Pyrebase-${PYREBASE_VERSION}.tar.gz
 
 RUN apk del .build-deps && rm -rf /var/cache/apk/*
-
-WORKDIR /usr/src/
