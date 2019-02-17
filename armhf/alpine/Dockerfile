@@ -1,5 +1,5 @@
 ARG PY_VERSION=3.6-alpine3.8
-FROM arm32v6/python:$PY_VERSION as firebase-iot-test-base
+FROM python:$PY_VERSION as firebase-iot-test-base
 
 COPY qemu-arm-static /usr/bin
 
