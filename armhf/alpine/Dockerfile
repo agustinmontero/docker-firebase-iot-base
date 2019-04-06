@@ -13,7 +13,9 @@ RUN pip3 install \
     python_jwt==2.0.1 \
     pycryptodome==3.4.3 \
     RPi.GPIO \
-    gpiozero
+    gpiozero \
+    requests \
+    gps
 
 ARG PYREBASE_VERSION=2019.1.28
 RUN pip3 install https://github.com/agustinmontero/Pyrebase/releases/download/${PYREBASE_VERSION}/Pyrebase-${PYREBASE_VERSION}.tar.gz
