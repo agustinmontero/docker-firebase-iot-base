@@ -14,7 +14,6 @@ RUN pip3 install \
     pycryptodome==3.4.3 \
     RPi.GPIO \
     gpiozero \
-    requests \
     gps
 
 ARG PYREBASE_VERSION=2019.1.28
