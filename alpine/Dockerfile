@@ -1,4 +1,4 @@
-ARG PY_VERSION=3.7-alpine3.9
+ARG PY_VERSION=3.6-alpine3.8
 FROM python:$PY_VERSION as firebase-iot-test-base
 
 RUN apk update && apk add --no-cache --virtual .build-deps gcc musl-dev wget
